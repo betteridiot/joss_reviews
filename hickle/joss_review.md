@@ -48,7 +48,7 @@ $ conda info
     base environment: /user/<user>/home/miniconda3
     ...
     platform: linux-64
-
+ 
 # Isolate my environment with `conda env`
 $ conda create -n joss_base python=3.7 --no-default-packages
 $ conda create -n joss_hickle --clone joss_base numpy=1.51.2 h5py dill

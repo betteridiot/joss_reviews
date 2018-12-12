@@ -9,15 +9,15 @@ Reviewer: @betteridiot<br/>
 ---
 # Quick Checks:
 1. General Stuff:
-    1. Software was available at the listed repo
+    * Software was available at the listed repo
     * MIT license present
     * Version (3.2.2) matched the repo
     * Authorship (@telegraphic) was appropriate
 2. Documentation:
-    1. Statement of need was present and appropriate
+    * Statement of need was present and appropriate
     * Example usage was present (see **Notes** below)
 3. Software paper:
-    1. Authors and affiliations present and appropriate
+    * Authors and affiliations present and appropriate
     * Statement of need also present within the paper
     * Advised author to add a DOI to paper.bib [here](https://github.com/telegraphic/hickle/issues/79) 
         * The author addressed this change in https://github.com/telegraphic/hickle/commit/304cb5cdbdf40b136d5764d3121d623ddbfcc6b6

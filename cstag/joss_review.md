@@ -920,3 +920,5 @@ read2   16  chr2    500 25  36M *   0   0   ATATAACAAACCCTGAGAACCAAAATGAACGAAAAC
 # Final notes
 * As of this writing (20231120), the build for `cstag` appears to be failing for all [macOS builds](https://github.com/akikuno/cstag/actions/runs/6924735500).
 * `cstag-cli` does not appear to have its own build environment and is just reporting `cstag's failing build.
+
+All notes related to the JoSS review at openjournals/joss-reviews/issues/6066

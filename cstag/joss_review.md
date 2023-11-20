@@ -15,24 +15,24 @@ Reviewer: @betteridiot<br/>
     - [x] Authorship ([@akikuno](https://github.com/akikuno)) was appropriate
 2. Documentation:
     - [ ] Statement of need was present and appropriate
-    * Documentation does not express statement of need. It only describes what the program does.
+        * Documentation does not express statement of need. It only describes what the program does.
     - [ ] Installation instructions clearly stated?
-    * Please see notes under GitHub and PIP [installation checks](##github-install)
+        * Please see notes under GitHub and PIP [installation checks](##github-install)
     - [x] Example usage was present
     - [x] Satisfactory functionality documentation
     - [ ] Automated tests
-    * Doctests for `cstag` do not pass do to minor syntax errors. See [Testing doctests](##testing-doctests)
+        * Doctests for `cstag` do not pass do to minor syntax errors. See [Testing doctests](##testing-doctests)
     - [x] Community guidelines
 3. Software paper:
     - [x] Authors and affiliations present and appropriate
     - [x] Statement of need present within the paper
     - [ ] State of the field
-    * Acknowledges `2passtools` but does not address its internal [cs tag functionality](https://github.com/bartongroup/2passtools/blob/d4378d0f4a780b5b89399161ed8eac6ca5092128/lib2pass/bamparse.py#L13-L56)
-    * I am curious about the author's "rebranding" of [`calcs`](https://pypi.org/project/calcs/), which appears to be a precursor to `cstag-cli`. Maybe add a deconfliction/redirect statement to one of the packages involved.
-    * As addressed by @jbloom, the author should recognize [`alignparse`](https://github.com/jbloomlab/alignparse/blob/b0d72945421b361cfed682e2c4d7dfb38ec1842c/alignparse/cs_tag.py) in their state of the field. 
+        * Acknowledges `2passtools` but does not address its internal [cs tag functionality](https://github.com/bartongroup/2passtools/blob/d4378d0f4a780b5b89399161ed8eac6ca5092128/lib2pass/bamparse.py#L13-L56)
+        * I am curious about the author's "rebranding" of [`calcs`](https://pypi.org/project/calcs/), which appears to be a precursor to `cstag-cli`. Maybe add a deconfliction/redirect statement to one of the packages involved.
+        * As addressed by @jbloom, the author should recognize [`alignparse`](https://github.com/jbloomlab/alignparse/blob/b0d72945421b361cfed682e2c4d7dfb38ec1842c/alignparse/cs_tag.py) in their state of the field. 
     - [x] Quality of writing
     - [ ] References
-          * Missing DOIs for `minimap2` and Bioconda.
+        * Missing DOIs for `minimap2` and Bioconda.
         
 #### **Notes** on Quick Check items:
 This is a minor thing that could lead people astray. The `CS` (uppercase) is a reserved for color read sequence information as per the [SAM format](https://samtools.github.io/hts-specs/SAMtags.pdf), while the `cs` (lowercase)

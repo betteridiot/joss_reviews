@@ -37,7 +37,7 @@ Reviewer: @betteridiot<br/>
 #### **Notes** on Quick Check items:
 This is a minor thing that could lead people astray. The `CS` (uppercase) is a reserved for color read sequence information as per the [SAM format](https://samtools.github.io/hts-specs/SAMtags.pdf), while the `cs` (lowercase)
 tag represents the difference string. This has already been a [topic of discussion](https://github.com/samtools/samtools/issues/1030#issuecomment-477137623) while feature requests to incorporate the `cs` tag more 
-formallying into the SAM format.
+formally into the SAM format.
 
 ---
 # Installation:

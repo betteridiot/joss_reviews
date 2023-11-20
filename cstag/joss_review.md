@@ -129,7 +129,7 @@ I just suspect that there might be some graduate student out there that has only
 My suggestion is to make the `pysam` (and, by extension, `htslib`) dependencies more explicitly documented on your repo/`README.md` since these dependencies cannot be address by `pip` alone. However, they are properly managed
 by `conda`/`mamba`. While an edge case, it is still a case.
 
-From this point on, I will be using the [GitHub build](#github-install) for Bioconda build for review and the GitHub build for testing.
+From this point on, I will be using the [GitHub build](##github-install) for Bioconda build for review and the GitHub build for testing.
 
 ---
 

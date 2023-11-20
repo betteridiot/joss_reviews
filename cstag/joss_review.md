@@ -15,10 +15,24 @@ Reviewer: @betteridiot<br/>
     - [x] Authorship ([@akikuno](https://github.com/akikuno)) was appropriate
 2. Documentation:
     - [ ] Statement of need was present and appropriate
-    - [ ] Example usage was present (see **Notes** below)
+    * Documentation does not express statement of need. It only describes what the program does.
+    - [ ] Installation instructions clearly stated?
+    * Please see notes under GitHub and PIP [installation checks](##github-install)
+    - [x] Example usage was present
+    - [x] Satisfactory functionality documentation
+    - [ ] Automated tests
+    * Doctests for `cstag` do not pass do to minor syntax errors. See [Testing doctests](##testing-doctests)
+    - [x] Community guidelines
 3. Software paper:
-    - [ ] Authors and affiliations present and appropriate
-    - [ ] Statement of need also present within the paper
+    - [x] Authors and affiliations present and appropriate
+    - [x] Statement of need present within the paper
+    - [ ] State of the field
+    * Acknowledges `2passtools` but does not address its internal [cs tag functionality](https://github.com/bartongroup/2passtools/blob/d4378d0f4a780b5b89399161ed8eac6ca5092128/lib2pass/bamparse.py#L13-L56)
+    * I am curious about the author's "rebranding" of [`calcs`](https://pypi.org/project/calcs/), which appears to be a precursor to `cstag-cli`. Maybe add a deconfliction/redirect statement to one of the packages involved.
+    * As addressed by @jbloom, the author should recognize [`alignparse`](https://github.com/jbloomlab/alignparse/blob/b0d72945421b361cfed682e2c4d7dfb38ec1842c/alignparse/cs_tag.py) in their state of the field. 
+    - [x] Quality of writing
+    - [ ] References
+          * Missing DOIs for `minimap2` and Bioconda.
         
 #### **Notes** on Quick Check items:
 This is a minor thing that could lead people astray. The `CS` (uppercase) is a reserved for color read sequence information as per the [SAM format](https://samtools.github.io/hts-specs/SAMtags.pdf), while the `cs` (lowercase)
@@ -132,8 +146,8 @@ by `conda`/`mamba`. While an edge case, it is still a case.
 From this point on, I will be using the [GitHub build](##github-install) for Bioconda build for review and the GitHub build for testing.
 
 ---
-
-# Testing the general import
+# Testing 
+## Testing the general import
 
 ```bash
 $ python -c "import cstag; print(True)"
@@ -144,17 +158,16 @@ $ cstag --help
 :heavy_check_mark: Help prompt of `cstag-cli` ran without error.
 
 ---
-# Testing with `pytest`
+## Testing with `pytest`
 :triangular_flag_on_post: Missing documentation on testing the build in `README.md`.
 :triangular_flag_on_post: Tests not included in package installs. Consider adding `tests` to your [`pyproject.toml`](https://python-poetry.org/docs/pyproject/#include-and-exclude) under the `include` parameter.
  
-* ```bash
-# Run test suite
+```bash
 $ conda install --solver libmamba pytset
 $ pytest --version
 pytest 7.4.3
 $ cd Downloads/cstag
-$ pytest tests/
+$ pytest -vv tests/
 ================================================= test session starts ==================================================
 platform linux -- Python 3.12.0, pytest-7.4.3, pluggy-1.3.0 -- /<PATH>/miniconda3/envs/joss_cstag_test/bin/python3.12
 cachedir: .pytest_cache
@@ -329,7 +342,7 @@ tests/utils/test_io.py::test_read_sam_with_sam_file PASSED                      
 * :heavy_check_mark:`cstag-cli` test suite passed.
 
 ---
-# Testing code coverage
+## Testing code coverage
 
 ```bash
 $ pip install pytest-cov
@@ -547,9 +560,9 @@ TOTAL                       14      0   100%
 * :heavy_check_mark: `cstag-cli` has 100% code coverage
 
 ---
-# Testing doctests
+## Testing doctests
 
-Because I saw docstrings, I figured there might be doctests. So I ran pytest on your docstrings and found some fun stuff:
+Because I saw docstrings, I figured there might be doctests. So I ran pytest on your docstrings and found some errors:
 
 ```bash
 $ cd ../cstag/src/cstag
@@ -902,3 +915,8 @@ read2   16  chr2    500 25  36M *   0   0   ATATAACAAACCCTGAGAACCAAAATGAACGAAAAC
     * :triangular_flag_on_post: Warning from `pysam` when dealing with STDIN regarding missing index file.
     * Given that this warning will always occur when creating a file from STDIN, it may be good to provide either explicit notice to end-users what the error means (i.e., there is no index file for the newly created file
     from STDIN), provide a parameter to suppress the warning, or just have the code fully [workaround](https://github.com/pysam-developers/pysam/issues/939#issuecomment-669016051) the error.
+
+---
+# Final notes
+* As of this writing (20231120), the build for `cstag` appears to be failing for all [macOS builds](https://github.com/akikuno/cstag/actions/runs/6924735500).
+* `cstag-cli` does not appear to have its own build environment and is just reporting `cstag's failing build.
